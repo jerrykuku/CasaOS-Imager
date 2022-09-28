@@ -610,8 +610,9 @@ _EOF_
 			sed -i '/^MENU TITLE/c\MENU TITLE Clonezilla live' tmpiso/syslinux/clonezilla.cfg
 			sed '/^label /,$d' tmpiso/syslinux/clonezilla.cfg > tmpiso/syslinux/syslinux.cfg
 			sed -n '/^label .*framebuffer/,/ENDTEXT/p' tmpiso/syslinux/clonezilla.cfg >> tmpiso/syslinux/syslinux.cfg
-			sed -i  -e '/^timeout /c\timeout 0' -e 's|\(MENU BACKGROUND\) .*|\1 casaosbg.png|' -e '/^MENU TITLE /c\MENU TABMSG' \
-				-e '/menu title/d' -e '/^say /d' -e '/MENU MARGIN/a\MENU HSHIFT 80\n MENU COLOR BORDER 0 #FFFFFFFF #FFFFFFFF none' \
+			sed -i  -e '/^timeout /c\timeout 0' -e 's|\(MENU BACKGROUND\) .*|\1 casaosbg.png|'  -e '/^MENU TITLE /c\MENU TABMSG' \
+				-e '/menu title/d' -e '/^say /d' -e '/MENU MARGIN/a\MENU HSHIFT 80\n MENU COLOR BORDER 0 #00000000 #00000000 none' \
+				-e 's|\(MENU COLOR UNSEL\) .*|\1 7;32;41 #ffffffff #00000000|' -e '/MENU COLOR UNSEL/a\ MENU COLOR SEL 7;32;41 #00000000 #ffffffff' \
 				-e '/^label /c\label Install CasaOS' -e '/^  MENU LABEL /c\  MENU LABEL Install CasaOS' -e '/^  TEXT HELP/,/^  ENDTEXT/d' \
 				-e 's/locales= /locales=C.UTF-8 /' -e 's/keyboard-layouts= /keyboard-layouts=gb /' -e 's/ocs-live-general/ocs-live-restore/' \
 				-e "s|ocs_live_extra_param=\"\"|ocs_live_extra_param=\"-icds -k1 -r -e2 -j2 -b -p poweroff restoredisk $OUTPUT_IMG_NAME ask_user\"|" \
