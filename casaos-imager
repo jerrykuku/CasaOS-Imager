@@ -569,7 +569,7 @@
 
 			### Prepare custom files used by the installer when booting in UEFI mode ###
 			# Create a GRUB theme for the main menu
-			G_EXEC curl -sSf "$CASAOS_IMAGER_REPO/Clonezilla/casasos-background_768p.png" -o tmpiso/boot/grub/casaosbg.png
+			G_EXEC curl -sSf "$CASAOS_IMAGER_REPO/Clonezilla/casaos-background_768p.png" -o tmpiso/boot/grub/casaosbg.png
 			G_EXEC curl -sSf "$CASAOS_IMAGER_REPO/Clonezilla/select_bkg_c.png" -o tmpiso/boot/grub/select_bkg_c.png
 			cat << '_EOF_' > tmpiso/boot/grub/theme.txt
 title-text: ""
@@ -604,7 +604,7 @@ _EOF_
 
 			### Prepare custom files used by the installer when booting in BIOS/CSM mode ###
 			# Make the original Clonezilla Live menu a submenu of a simplified CasaOS install main menu
-			G_EXEC curl -sSf "$CASAOS_IMAGER_REPO/Clonezilla/casasos-background_480p.png" -o tmpiso/syslinux/casaosbg.png
+			G_EXEC curl -sSf "$CASAOS_IMAGER_REPO/Clonezilla/casaos-background_480p.png" -o tmpiso/syslinux/casaosbg.png
 			G_EXEC cp /usr/lib/syslinux/modules/bios/poweroff.c32 tmpiso/syslinux/
 			G_EXEC mv tmpiso/syslinux/{syslinux,clonezilla}.cfg
 			sed -i '/^MENU TITLE/c\MENU TITLE Clonezilla live' tmpiso/syslinux/clonezilla.cfg
