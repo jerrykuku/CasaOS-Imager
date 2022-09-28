@@ -228,7 +228,7 @@
 		main_menu_choice='Target name' # On cancel, keep this entry selected
 
 		G_WHIP_DEFAULT_ITEM=$OUTPUT_IMG_NAME
-		G_WHIP_INPUTBOX 'Please enter a name for the new image:\n - DietPi_<device>-<arch>-<distro>\n - E.g.: DietPi_RPi-ARMv6-Bullseye' || return
+		G_WHIP_INPUTBOX 'Please enter a name for the new image:\n - CasaOS_<device>-<arch>-<distro>\n - E.g.: CasaOS_PC-x86' || return
 		OUTPUT_IMG_NAME=$G_WHIP_RETURNED_VALUE
 
 		# Check for existing file, in case offer backup. Skip if source is image file and matches output file already.
@@ -634,7 +634,7 @@ _EOF_
 			# Generate ISO file with Clonezilla Live + CasaOS image
 			G_EXEC_DESC="Generating $OUTPUT_IMG_NAME.$OUTPUT_IMG_EXT" G_EXEC_OUTPUT=1 G_EXEC xorriso \
 				-as mkisofs -R -r -J -joliet-long -l -iso-level 3 -isohybrid-mbr /usr/lib/ISOLINUX/isohdpfx.bin -partition_offset 16 \
-				-publisher 'Casaos - Your Home Cloud OS; https://www.casaos.io/;' -volid 'DIETPI_INSTALLER' \
+				-publisher 'Casaos - Your Home Cloud OS; https://www.casaos.io/;' -volid 'CASAOS_INSTALLER' \
 				-A "clonezilla-live-$CLONEZILLA_VERSION-amd64" -b syslinux/isolinux.bin -c syslinux/boot.cat -no-emul-boot -boot-load-size 4 \
 				-boot-info-table -eltorito-alt-boot --efi-boot boot/grub/efi.img -isohybrid-gpt-basdat -isohybrid-apm-hfsplus \
 				-o "$OUTPUT_IMG_NAME.$OUTPUT_IMG_EXT" tmpiso
