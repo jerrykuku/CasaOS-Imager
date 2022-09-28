@@ -39,7 +39,7 @@
 	readonly FP_MNT_TMP="/tmp/${G_PROGRAM_NAME}_mnt"
 	readonly CLONEZILLA_REPO='https://sourceforge.net/projects/clonezilla/files/clonezilla_live_stable'
 	readonly DIETPI_REPO="https://raw.githubusercontent.com/$G_GITOWNER/DietPi/$G_GITBRANCH"
-	readonly CASAOS_IMAGER_REPO="https://raw.githubusercontent.com/jerrykuku/CasaOS-Imager/main/"
+	readonly CASAOS_IMAGER_REPO="https://raw.githubusercontent.com/jerrykuku/CasaOS-Imager/main"
 
 	Error_Exit()
 	{
