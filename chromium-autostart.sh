@@ -12,7 +12,7 @@ CHROMIUM_OPTS="--no-sandbox --kiosk --window-size=${RES_X:-1280},${RES_Y:-720} -
 #CHROMIUM_OPTS+=' --force-tablet-mode --tablet-ui'
 
 # Home page
-URL=http://casaos.local
+URL=http://localhost/
 
 # RPi or Debian Chromium package
 FP_CHROMIUM=$(command -v chromium-browser)
